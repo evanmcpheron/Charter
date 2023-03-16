@@ -1,23 +1,15 @@
 import React, { useState } from "react";
 import { KeyboardArrowDown, KeyboardArrowUp } from "@mui/icons-material";
-import {
-  Box,
-  Collapse,
-  IconButton,
-  Table,
-  TableBody,
-  TableCell,
-  TableHead,
-  TableRow,
-  Typography,
-} from "@mui/material";
+import { IconButton, TableCell, TableRow } from "@mui/material";
+import Items from "./Items";
 
-const IndividualItems = ({ user }) => {
+const Customer = ({ user }) => {
   const [open, setOpen] = useState(false);
+
   return (
     <>
       <TableRow sx={{ "& > *": { borderBottom: "unset" } }}>
-        <TableCell>
+        <TableCell align="left">
           <IconButton
             aria-label="expand row"
             size="small"
@@ -26,46 +18,17 @@ const IndividualItems = ({ user }) => {
             {open ? <KeyboardArrowUp /> : <KeyboardArrowDown />}
           </IconButton>
         </TableCell>
-        <TableCell component="th" scope="row">
+        <TableCell component="th" scope="row" align="left">
           {user.customer.name}
         </TableCell>
-        <TableCell align="right">{user.spent}</TableCell>
-        <TableCell align="right">{user.points}</TableCell>
+        <TableCell align="center">${user.spent}</TableCell>
+        <TableCell align="center">{user.points}</TableCell>
       </TableRow>
       <TableRow>
-        <TableCell style={{ paddingBottom: 0, paddingTop: 0 }} colSpan={6}>
-          <Collapse in={open} timeout="auto" unmountOnExit>
-            <Box sx={{ margin: 1 }}>
-              <Typography variant="h6" gutterBottom component="div">
-                History
-              </Typography>
-              <Table size="small" aria-label="purchases">
-                <TableHead>
-                  <TableRow>
-                    <TableCell>Date</TableCell>
-                    <TableCell>Name</TableCell>
-                    <TableCell align="right">Price</TableCell>
-                    <TableCell align="right">Points</TableCell>
-                  </TableRow>
-                </TableHead>
-                <TableBody>
-                  {user.items.map((item, idx) => (
-                    <TableRow key={idx}>
-                      <TableCell component="th" scope="row">
-                        {item.points}
-                      </TableCell>
-                      <TableCell>{item.points}</TableCell>
-                      <TableCell align="right">{item.price}</TableCell>
-                    </TableRow>
-                  ))}
-                </TableBody>
-              </Table>
-            </Box>
-          </Collapse>
-        </TableCell>
+        <Items user={user} open={open} />
       </TableRow>
     </>
   );
 };
 
-export default IndividualItems;
+export default Customer;

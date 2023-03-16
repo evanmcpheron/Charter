@@ -506,17 +506,18 @@ export const allUsersDB = [
     price: 91,
     createdAt: "2012-07-15T15:16:20.681Z",
   },
+
   {
     id: "64134f30598859527d719025",
     customer: {
       name: "Dana Bender",
       id: "6413478db45cee5f61463407",
     },
-    purchaseDate: new Date("2023-03-13"),
+    purchaseDate: new Date("2023-03-04"),
     itemDescription:
       "Magna laborum aute duis nisi tempor in sit ex incididunt enim. Sint aute deserunt proident excepteur sit aute tempor proident aliquip reprehenderit laborum nostrud.",
     itemName: "minim velit",
-    price: 91,
+    price: 102,
     createdAt: "2012-07-15T15:16:20.681Z",
   },
   {
