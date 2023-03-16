@@ -26,6 +26,7 @@
 - To simulate a larger set of data spanning a longer time than the 3 months I created a file that acts as a request from a GET request spanning back a year. (93 generated entries)
 - `customerTotals.js` is O(n) time complexity. I am using this utility to create the final Array that will be used to render only the correct data.
 - `calculatePoints.js` is the method that is being used to actually calculate points based on a specific price point
+- Simulated loading an async function with `setTimeout` function
 
 
 
