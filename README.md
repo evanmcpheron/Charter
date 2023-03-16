@@ -1,70 +1,50 @@
-# Getting Started with Create React App
+# Purchase Points Report
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## Important Files
 
-In the project directory, you can run:
+* src/
+  * api/
+    * [api.js](./api/api.js)
+    * [orders.js](./api/api.js)
+  * components/
+    * [Customer.js](./components/Customer.js)
+    * [Items.js](./components/Items.js)
+    * [RewardsPointsReport.js](./components/RewardsPointsReport.js)
+  * utils/
+    * [calculatePoints.js](./utils/calculatePOints.js)
+    * [customerTotals.js](./customerTotals.js)
+    * [formDate.js](formatDate.js)
 
-### `npm start`
+--- 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Important Decisions
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- I prefer to use a reuseable component library when developing with React. I decided to use MUI to mock what it would be like to use an existing component library.
+- For mocking the api call I decided to use a simple `new Promise` so that I can satisfy the asynchronous AC on the ticket.
+- To simulate a larger set of data spanning a longer time than the 3 months I created a file that acts as a request from a GET request spanning back a year. (93 generated entries)
+- `customerTotals.js` is O(n) time complexity. I am using this utility to create the final Array that will be used to render only the correct data.
+- `calculatePoints.js` is the method that is being used to actually calculate points based on a specific price point
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+--- 
+## Acceptance Criteria
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+A retailer offers a rewards program to its customers, awarding points based on each recorded purchase.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+A customer receives 2 points for every dollar spent over $100 in each transaction, plus 1 point for every dollar spent between $50 and $100 in each transaction.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+(e.g. a $120 purchase = 2x$20 + 1x$50 = 90 points).
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Given a record of every transaction during a three month period, calculate the reward points earned for each customer per month and total.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+  - Use React JS (do not use TypeScript)
+  - Simulate an asynchronous API call to fetch data
+  - Make up a data set to best demonstrate your solution
+  - Check solution into GitHub# Charter
