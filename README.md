@@ -6,16 +6,16 @@
 
 * src/
   * api/
-    * [api.js](./api/api.js)
-    * [orders.js](./api/api.js)
+    * [api.js](./src/api/api.js)
+    * [orders.js](./src/api/api.js)
   * components/
-    * [Customer.js](./components/Customer.js)
-    * [Items.js](./components/Items.js)
-    * [RewardsPointsReport.js](./components/RewardsPointsReport.js)
+    * [Customer.js](./src/components/Customer.js)
+    * [Items.js](./src/components/Items.js)
+    * [RewardsPointsReport.js](./src/components/RewardsPointsReport.js)
   * utils/
-    * [calculatePoints.js](./utils/calculatePOints.js)
-    * [customerTotals.js](./customerTotals.js)
-    * [formDate.js](formatDate.js)
+    * [calculatePoints.js](./src/utils/calculatePOints.js)
+    * [customerTotals.js](./src/customerTotals.js)
+    * [formDate.js](./src/formatDate.js)
 
 --- 
 
